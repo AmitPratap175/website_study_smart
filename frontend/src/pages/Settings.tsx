@@ -22,13 +22,16 @@ const Settings: React.FC = () => {
   const [showResetModal, setShowResetModal] = useState(false);
 
   const updateSetting = (category: string, key: string, value: any) => {
-    setSettings(prev => ({
-      ...prev,
-      [category]: {
-        ...(prev[category as keyof typeof prev] || {}),
-        [key]: value
-      }
-    }));
+    setSettings(prev => {
+      const currentCategory = prev[category as keyof typeof prev];
+      return {
+        ...prev,
+        [category]: {
+          ...(typeof currentCategory === 'object' && currentCategory !== null ? currentCategory : {}),
+          [key]: value
+        }
+      };
+    });
   };
 
   const handleResetProgress = () => {
