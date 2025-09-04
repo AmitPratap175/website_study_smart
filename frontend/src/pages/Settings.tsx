@@ -25,7 +25,7 @@ const Settings: React.FC = () => {
     setSettings(prev => ({
       ...prev,
       [category]: {
-        ...prev[category as keyof typeof prev],
+        ...(prev[category as keyof typeof prev] || {}),
         [key]: value
       }
     }));
