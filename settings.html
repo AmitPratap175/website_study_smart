@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8"/>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        :root {
+            --primary-color: #ea2a33;
+        }
+        .dark .dark\:bg-gray-950 {
+            background-color: #030712;
+        }
+        .dark .dark\:bg-gray-900 {
+            background-color: #111827;
+        }
+        .dark .dark\:bg-gray-800 {
+            background-color: #1f2937;
+        }
+        .dark .dark\:hover\:bg-gray-700:hover {
+            background-color: #374151;
+        }
+        .dark .dark\:text-gray-200 {
+            color: #e5e7eb;
+        }
+        .dark .dark\:text-gray-300 {
+            color: #d1d5db;
+        }
+        .dark .dark\:text-gray-400 {
+            color: #9ca3af;
+        }
+        .dark .dark\:text-gray-500 {
+            color: #6b7280;
+        }
+        .dark .dark\:border-gray-700 {
+            border-color: #374151;
+        }
+        #space,
+        #stars,
+        #twinkling {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            z-index: -1;
+        }
+        #stars {
+            background: #000 url(https://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+        }
+        #twinkling {
+            background: transparent url(https://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+            animation: move-twink-back 200s linear infinite;
+        }
+        @keyframes move-twink-back {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: -10000px 5000px;
+            }
+        }
+        .peer:checked~.peer-checked\:bg-blue-600 {
+            background-color: #2563eb;
+        }
+        .peer:checked~* .peer-checked\:translate-x-full {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-950 transition-colors duration-500">
+<div class="relative flex size-full min-h-screen flex-col group/design-root" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+<div class="dark-mode-container hidden dark:block">
+<div id="space">
+<div id="stars"></div>
+<div id="twinkling"></div>
+</div>
+</div>
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-white dark:bg-gray-900 dark:border-gray-700 px-10 py-3 transition-colors duration-500">
+<div class="flex items-center gap-4 text-gray-800 dark:text-gray-200">
+<div class="size-8 text-[var(--primary-color)]">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-gray-800 dark:text-gray-200 text-xl font-bold leading-tight tracking-[-0.015em]">StudySmart</h2>
+</div>
+<div class="flex flex-1 justify-center gap-8">
+<a class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 text-sm font-medium leading-normal" href="#">Home</a>
+<a class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 text-sm font-medium leading-normal" href="#">Practice</a>
+<a class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 text-sm font-medium leading-normal" href="#">Review</a>
+<a class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 text-sm font-medium leading-normal" href="#">Community</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-700 dark:hover:text-gray-200">
+<div class="text-gray-600 dark:text-gray-400" data-icon="Bell" data-size="20px" data-weight="regular">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</div>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAsu4k0pEl0sTXNASeqhlUR4TeITfyPtsSKFMyaTcmVgWGt3oASVk0X-hWL5yceHVUgtdbD8JFnMQegWYrazJ1BK9-cSjG0AxNQ1YL9Z37a96yuIvVXp94g4KhOHdyjXKvwpUqOiaJBujHTYaErRy-7ivhtpPHbc_Q5laOMxaN5_C0A6WHlPGul9oESoxW7hCldhVHGzl1NRWtv5PjDtWS-wnp19YRIWfCVHFn6ZQnf02_M5EBXLOYNYnGEeovlUATrRL0hXie4E50");'></div>
+</div>
+</header>
+<main class="flex-1 px-40 py-10">
+<div class="mx-auto max-w-[960px]">
+<div class="flex justify-between items-center p-4">
+<p class="text-gray-900 dark:text-gray-200 text-4xl font-bold leading-tight">Settings</p>
+<button class="relative inline-flex items-center h-6 rounded-full w-11 transition-colors bg-gray-200 dark:bg-gray-700" id="theme-toggle">
+<span class="inline-block w-4 h-4 transform bg-white rounded-full transition-transform translate-x-1 dark:translate-x-6" id="theme-toggle-indicator"></span>
+</button>
+</div>
+<div class="grid grid-cols-1 gap-12">
+<div>
+<h3 class="text-gray-800 dark:text-gray-300 text-xl font-bold leading-tight tracking-[-0.015em] px-4 pb-4">Account</h3>
+<div class="space-y-2">
+<a class="flex items-center gap-4 rounded-md bg-white dark:bg-gray-900 p-4 justify-between hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<div class="flex flex-col justify-center">
+<p class="text-gray-800 dark:text-gray-300 text-base font-medium leading-normal">Name</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Sophia Clark</p>
+</div>
+<div class="text-gray-400 dark:text-gray-500">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+</svg>
+</div>
+</a>
+<a class="flex items-center gap-4 rounded-md bg-white dark:bg-gray-900 p-4 justify-between hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<div class="flex flex-col justify-center">
+<p class="text-gray-800 dark:text-gray-300 text-base font-medium leading-normal">Email</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">sophia.clark@email.com</p>
+</div>
+<div class="text-gray-400 dark:text-gray-500">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+</svg>
+</div>
+</a>
+<a class="flex items-center gap-4 rounded-md bg-white dark:bg-gray-900 p-4 justify-between hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<div class="flex flex-col justify-center">
+<p class="text-gray-800 dark:text-gray-300 text-base font-medium leading-normal">Password</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">********</p>
+</div>
+<div class="text-gray-400 dark:text-gray-500">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+</svg>
+</div>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-gray-800 dark:text-gray-300 text-xl font-bold leading-tight tracking-[-0.015em] px-4 pb-4">App Settings</h3>
+<div class="space-y-2">
+<a class="flex items-center gap-4 rounded-md bg-white dark:bg-gray-900 p-4 justify-between hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<div class="flex flex-col justify-center">
+<p class="text-gray-800 dark:text-gray-300 text-base font-medium leading-normal">Language</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">English</p>
+</div>
+<div class="text-gray-400 dark:text-gray-500">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+</svg>
+</div>
+</a>
+<div class="flex items-center gap-4 rounded-md bg-white dark:bg-gray-900 p-4 justify-between">
+<div class="flex flex-col justify-center">
+<p class="text-gray-800 dark:text-gray-300 text-base font-medium leading-normal">Theme</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal theme-name">Light</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-gray-800 dark:text-gray-300 text-xl font-bold leading-tight tracking-[-0.015em] px-4 pb-4">Notifications</h3>
+<div class="space-y-2">
+<a class="flex items-center gap-4 rounded-md bg-white dark:bg-gray-900 p-4 justify-between hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<div class="flex flex-col justify-center">
+<p class="text-gray-800 dark:text-gray-300 text-base font-medium leading-normal">Push Notifications</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">On</p>
+</div>
+<div class="text-gray-400 dark:text-gray-500">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+</svg>
+</div>
+</a>
+<a class="flex items-center gap-4 rounded-md bg-white dark:bg-gray-900 p-4 justify-between hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<div class="flex flex-col justify-center">
+<p class="text-gray-800 dark:text-gray-300 text-base font-medium leading-normal">Email Notifications</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Off</p>
+</div>
+<div class="text-gray-400 dark:text-gray-500">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+</svg>
+</div>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-gray-800 dark:text-gray-300 text-xl font-bold leading-tight tracking-[-0.015em] px-4 pb-4">Advanced Options</h3>
+<div class="space-y-2">
+<div class="flex items-center justify-between rounded-md bg-white dark:bg-gray-900 p-4">
+<div class="flex flex-col">
+<p class="text-gray-800 dark:text-gray-300 text-base font-medium">Adaptive Learning</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm">Adjusts question difficulty based on your performance.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[var(--primary-color)]"></div>
+</label>
+</div>
+<div class="flex items-center justify-between rounded-md bg-white dark:bg-gray-900 p-4">
+<div class="flex flex-col">
+<p class="text-gray-800 dark:text-gray-300 text-base font-medium">Smart Reminders</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm">Sends notifications for topics you need to review.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[var(--primary-color)]"></div>
+</label>
+</div>
+<div class="flex items-center justify-between rounded-md bg-white dark:bg-gray-900 p-4">
+<div class="flex flex-col">
+<p class="text-gray-800 dark:text-gray-300 text-base font-medium">Offline Mode</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm">Download question banks for offline access.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[var(--primary-color)]"></div>
+</label>
+</div>
+<div class="flex items-center justify-between rounded-md bg-white dark:bg-gray-900 p-4">
+<div class="flex flex-col">
+<p class="text-gray-800 dark:text-gray-300 text-base font-medium">Reset Progress</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm">Clear all your performance data and start fresh.</p>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-9 px-3 bg-red-600 text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-red-700 transition-colors" onclick="document.getElementById('reset-progress-modal').classList.remove('hidden')">
+<span class="truncate">Reset</span>
+</button>
+</div>
+<div class="flex flex-col justify-between rounded-md bg-white dark:bg-gray-900 p-4 gap-4">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<p class="text-gray-800 dark:text-gray-300 text-base font-medium">Space Animation</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm">Customize the dark mode background animation.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[var(--primary-color)]"></div>
+</label>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="text-gray-500 dark:text-gray-400 text-sm font-medium" for="animation-speed">Animation Speed</label>
+<input class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" id="animation-speed" max="100" min="0" type="range" value="50"/>
+</div>
+<div class="space-y-2">
+<label class="text-gray-500 dark:text-gray-400 text-sm font-medium" for="element-density">Element Density</label>
+<input class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" id="element-density" max="100" min="0" type="range" value="50"/>
+</div>
+<div class="space-y-2">
+<label class="text-gray-500 dark:text-gray-400 text-sm font-medium" for="visual-style">Visual Style</label>
+<select class="block w-full px-3 py-2 text-sm text-gray-900 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[var(--primary-color)] dark:focus:border-[var(--primary-color)]" id="visual-style">
+<option>Classic Stars</option>
+<option>Cosmic Dust</option>
+<option>Nebula Clouds</option>
+<option>Galactic Voyage</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-gray-800 dark:text-gray-300 text-xl font-bold leading-tight tracking-[-0.015em] px-4 pb-4">Support</h3>
+<div class="space-y-2">
+<a class="flex items-center gap-4 rounded-md bg-white dark:bg-gray-900 p-4 justify-between hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<p class="text-gray-700 dark:text-gray-300 text-base font-normal leading-normal">Help Center</p>
+<div class="text-gray-400 dark:text-gray-500">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+</svg>
+</div>
+</a>
+<a class="flex items-center gap-4 rounded-md bg-white dark:bg-gray-900 p-4 justify-between hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<p class="text-gray-700 dark:text-gray-300 text-base font-normal leading-normal">Contact Us</p>
+<div class="text-gray-400 dark:text-gray-500">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+</svg>
+</div>
+</a>
+<a class="flex items-center gap-4 rounded-md bg-white dark:bg-gray-900 p-4 justify-between hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<p class="text-gray-700 dark:text-gray-300 text-base font-normal leading-normal">Terms of Service</p>
+<div class="text-gray-400 dark:text-gray-500">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+</svg>
+</div>
+</a>
+<a class="flex items-center gap-4 rounded-md bg-white dark:bg-gray-900 p-4 justify-between hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<p class="text-gray-700 dark:text-gray-300 text-base font-normal leading-normal">Privacy Policy</p>
+<div class="text-gray-400 dark:text-gray-500">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+</svg>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="px-4 py-8">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="truncate">Log Out</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+<div class="fixed inset-0 z-10 hidden bg-gray-900 bg-opacity-75" id="reset-progress-modal">
+<div class="flex items-center justify-center min-h-screen">
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 w-full max-w-md mx-4">
+<div class="text-center">
+<div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 dark:bg-red-900">
+<svg class="h-6 w-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="mt-5 text-lg font-medium leading-6 text-gray-900 dark:text-gray-200">Reset Progress</h3>
+<div class="mt-2">
+<p class="text-sm text-gray-500 dark:text-gray-400">Are you sure you want to reset your progress? All of your performance data will be permanently deleted. This action cannot be undone.</p>
+</div>
+</div>
+<div class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
+<button class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:col-start-2 sm:text-sm" onclick="document.getElementById('reset-progress-modal').classList.add('hidden')" type="button">Reset</button>
+<button class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 dark:border-gray-600 shadow-sm px-4 py-2 bg-white dark:bg-gray-800 text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:mt-0 sm:col-start-1 sm:text-sm" onclick="document.getElementById('reset-progress-modal').classList.add('hidden')" type="button">Cancel</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeName = document.querySelector('.theme-name');
+        const body = document.body;
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            const isDarkMode = body.classList.contains('dark');
+            themeName.textContent = isDarkMode ? 'Dark' : 'Light';
+        });
+        // Set initial theme name
+        themeName.textContent = body.classList.contains('dark') ? 'Dark' : 'Light';
+    </script>
+</body></html>

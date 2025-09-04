@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="" lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>StudySmart - Question</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #ea2a33;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+      }
+      .dark {
+        --primary-color: #f87171;}
+      .radio-custom:checked {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+      }
+      .radio-option:has(input:checked) {
+        border-color: var(--primary-color);
+        background-color: rgba(234, 42, 51, 0.1);
+      }
+      .dark .radio-option:has(input:checked) {
+        background-color: rgba(248, 113, 113, 0.1);
+      }
+      .radio-option:hover {
+        border-color: #f8b4b7;
+      }
+      .dark .radio-option:hover {
+        border-color: #f87171;
+      }
+      .dark .radio-option-correct {
+        border-color: #4ade80;
+        background-color: rgba(74, 222, 128, 0.1);
+      }
+      .dark .radio-option-wrong {
+        border-color: #f87171;
+        background-color: rgba(248, 113, 113, 0.1);
+      }.space-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+      }
+      .stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image:
+          radial-gradient(1px 1px at 20% 30%, white, rgba(255,255,255,0)),
+          radial-gradient(1px 1px at 40% 20%, white, rgba(255,255,255,0)),
+          radial-gradient(1px 1px at 80% 40%, white, rgba(255,255,255,0)),
+          radial-gradient(2px 2px at 60% 70%, white, rgba(255,255,255,0)),
+          radial-gradient(1px 1px at 10% 80%, white, rgba(255,255,255,0)),
+          radial-gradient(1px 1px at 90% 10%, white, rgba(255,255,255,0)),
+          radial-gradient(1px 1px at 50% 50%, white, rgba(255,255,255,0));
+        animation: twinkle 15s infinite linear;
+      }
+      .twinkling {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAxMC8yOS8xMiKqq3kAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAABQElEQVRYhe2XwUrDUBCG/xZBFyHBi678A/gXfQDfgz6A/iP+An3J35BEX1q4lBDRW/wDBKk+qS1NJnma5s3qu1bS2wfce+bN9qZpMvcsGo3GMEw7fA8HAEB1dnaGIAhqgYAbwBvgGzDTRv4AfgDHIAMw4l4gEwA8s7M6Aj6A0yAF0C8fBCeWkUTuW+R6T/z/BQC2yPXCb3wH0CGQeyWA0weMbfYNAbAMsK/H4/H0/v0gGLYwGAwYDAaUxeuY9kM4r0RC5hIA4CYBe4C4AKwJ4O3w2wMAMK01zP3zFQAwmk0iVwAWNUAXQfCkueYYRgNA+jYtMBgMSsMv477q9TpgNAgAABiNJvFeq41Gw2xwGAzAoV2v16sL0Xf47wIANjGZG8sA9sSwfwgAv2x1+Lqu27hxbzQaqiF5vT4bANbub1KAF8Bf4DeYl+1GAAAAAElFTkSuQmCC') repeat;
+        animation: move-twink-back 20s linear infinite;
+        opacity: 0.5;
+      }
+      @keyframes twinkle {
+        0% { opacity: 0; }
+        50% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+      @keyframes move-twink-back {
+          from {background-position:0 0;}
+          to {background-position:-10000px 5000px;}
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
+<div class="flex min-h-screen flex-col relative">
+<div class="space-bg hidden" id="space-background">
+<div class="stars"></div>
+<div class="twinkling"></div>
+</div>
+<header class="sticky top-0 z-10 flex items-center justify-between border-b border-gray-200 bg-white px-6 py-3 dark:bg-gray-900/80 dark:border-gray-700 dark:backdrop-blur-sm">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 text-[var(--primary-color)]">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold text-gray-900 dark:text-gray-50">StudySmart</h1>
+</div>
+<nav class="hidden items-center gap-6 md:flex">
+<a class="text-sm font-medium text-gray-600 hover:text-[var(--primary-color)] dark:text-gray-400 dark:hover:text-[var(--primary-color)]" href="#">Dashboard</a>
+<a class="text-sm font-medium text-[var(--primary-color)]" href="#">Practice</a>
+<a class="text-sm font-medium text-gray-600 hover:text-[var(--primary-color)] dark:text-gray-400 dark:hover:text-[var(--primary-color)]" href="#">Tests</a>
+<a class="text-sm font-medium text-gray-600 hover:text-[var(--primary-color)] dark:text-gray-400 dark:hover:text-[var(--primary-color)]" href="#">Review</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700" id="theme-toggle">
+<span class="material-symbols-outlined dark:hidden">light_mode</span>
+<span class="material-symbols-outlined hidden dark:inline">dark_mode</span>
+</button>
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</button>
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSJjMXkNKYlAns_Y1Cyk_HGLpfaQj4YPzIPpjhQBOZhVYhdQvJscZTLGGofdRU8DlDQLkQxb-gIK3IXvGdNSRP_89YlW7aeKZoPX9Y7uPaPxCT-WhnXiC5clLCU3fglMjw5gka5dXz67NUjDCip06bbryF8Ni_nTlMsAycFLeX6kHoV8eyg10Vo1h4xHs83_VmkinG9QzgLpl7_q1gbKSdHz4oGf9voYHm1qtPqaV1ia_oSaaa4p_PeRjim7nqdCw_LFeiYznMXPM");'></div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+<div class="mb-6">
+<nav aria-label="Breadcrumb" class="flex text-sm">
+<ol class="inline-flex items-center space-x-1 md:space-x-2">
+<li class="inline-flex items-center">
+<a class="inline-flex items-center text-gray-500 hover:text-[var(--primary-color)] dark:text-gray-400 dark:hover:text-[var(--primary-color)]" href="#"> Practice </a>
+</li>
+<li>
+<div class="flex items-center">
+<svg class="h-5 w-5 text-gray-400 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" fill-rule="evenodd"></path>
+</svg>
+<span class="ml-1 font-medium text-gray-800 md:ml-2 dark:text-gray-200">Question 12</span>
+</div>
+</li>
+</ol>
+</nav>
+</div>
+<div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:bg-gray-800/50 dark:border-gray-700">
+<div class="mb-6 flex items-center justify-between">
+<div>
+<p class="text-sm font-medium text-gray-500 dark:text-gray-400">Progress</p>
+<div class="mt-1.5 flex items-center gap-2">
+<div class="w-40 rounded-full bg-gray-200 dark:bg-gray-700">
+<div class="h-2 rounded-full bg-[var(--primary-color)]" style="width: 25%"></div>
+</div>
+<p class="text-sm font-semibold text-gray-700 dark:text-gray-300">25%</p>
+</div>
+</div>
+<div class="flex items-center gap-2 rounded-lg bg-gray-100 p-2 dark:bg-gray-700/50">
+<div class="text-center">
+<div class="text-2xl font-bold text-gray-900 dark:text-gray-50">02</div>
+<div class="text-xs text-gray-500 dark:text-gray-400">MIN</div>
+</div>
+<div class="text-2xl font-bold text-gray-400 dark:text-gray-500">:</div>
+<div class="text-center">
+<div class="text-2xl font-bold text-gray-900 dark:text-gray-50">30</div>
+<div class="text-xs text-gray-500 dark:text-gray-400">SEC</div>
+</div>
+</div>
+</div>
+<h2 class="mb-6 text-xl font-bold leading-snug text-gray-900 dark:text-gray-100">
+              Which of the following is NOT a characteristic of a perfectly competitive market?
+            </h2>
+<div class="space-y-4">
+<label class="radio-option flex cursor-pointer items-center gap-4 rounded-md border border-gray-300 p-4 transition-colors dark:border-gray-600">
+<input class="radio-custom h-5 w-5 appearance-none rounded-full border-2 border-gray-300 bg-white checked:border-[var(--primary-color)] checked:bg-[var(--primary-color)] focus:outline-none dark:bg-gray-800 dark:border-gray-500" name="question-option" type="radio"/>
+<span class="flex-grow text-sm font-medium text-gray-700 dark:text-gray-300">Many buyers and sellers</span>
+</label>
+<label class="radio-option flex cursor-pointer items-center gap-4 rounded-md border border-gray-300 p-4 transition-colors dark:border-gray-600">
+<input class="radio-custom h-5 w-5 appearance-none rounded-full border-2 border-gray-300 bg-white checked:border-[var(--primary-color)] checked:bg-[var(--primary-color)] focus:outline-none dark:bg-gray-800 dark:border-gray-500" name="question-option" type="radio"/>
+<span class="flex-grow text-sm font-medium text-gray-700 dark:text-gray-300">Homogeneous products</span>
+</label>
+<label class="radio-option radio-option-correct flex cursor-pointer items-center gap-4 rounded-md border border-green-500 bg-green-50 p-4 ring-2 ring-green-200 dark:bg-green-900/20 dark:border-green-500 dark:ring-green-500/30">
+<input checked="" class="radio-custom h-5 w-5 appearance-none rounded-full border-2 border-green-500 bg-green-500 checked:border-green-500 checked:bg-green-500 focus:outline-none dark:bg-green-500" name="question-option" type="radio"/>
+<span class="flex-grow text-sm font-medium text-green-800 dark:text-green-300">Free entry and exit</span>
+<svg class="text-green-600 dark:text-green-400" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+</label>
+<label class="radio-option radio-option-wrong flex cursor-pointer items-center gap-4 rounded-md border border-red-500 bg-red-50 p-4 ring-2 ring-red-200 dark:bg-red-900/20 dark:border-red-500 dark:ring-red-500/30">
+<input class="radio-custom h-5 w-5 appearance-none rounded-full border-2 border-red-500 bg-red-500 checked:border-red-500 checked:bg-red-500 focus:outline-none dark:bg-red-500" name="question-option" type="radio"/>
+<span class="flex-grow text-sm font-medium text-red-800 dark:text-red-300">Government regulation of prices</span>
+<svg class="text-red-600 dark:text-red-400" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+</label>
+</div>
+<div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+<button class="flex w-full items-center justify-center gap-2 rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm font-bold text-gray-700 hover:bg-gray-100 sm:w-auto dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-600">
+<svg class="bi bi-bookmark" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.72-2.583a.5.5 0 0 1 .56 0L13 14.566V2a1 1 0 0 0-1-1H4z"></path>
+</svg>
+                Mark for Review
+              </button>
+<button class="w-full rounded-md bg-[var(--primary-color)] px-6 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-red-700 sm:w-auto dark:hover:bg-red-500">
+                Submit
+              </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const spaceBg = document.getElementById('space-background');
+    // Check for saved theme in local storage
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        spaceBg.classList.remove('hidden');
+    } else {
+        document.documentElement.classList.remove('dark');
+        spaceBg.classList.add('hidden');
+    }
+    themeToggleBtn.addEventListener('click', function() {
+        // toggle icons inside button
+        document.documentElement.classList.toggle('dark');
+        // if set via local storage previously
+        if (localStorage.getItem('color-theme')) {
+            if (localStorage.getItem('color-theme') === 'light') {
+                localStorage.setItem('color-theme', 'dark');
+                spaceBg.classList.remove('hidden');
+            } else {
+                localStorage.setItem('color-theme', 'light');
+                spaceBg.classList.add('hidden');
+            }
+        // if NOT set via local storage previously
+        } else {
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('color-theme', 'dark');
+                spaceBg.classList.remove('hidden');
+            } else {
+                localStorage.setItem('color-theme', 'light');
+                spaceBg.classList.add('hidden');
+            }
+        }
+    });
+</script>
+
+</body></html>

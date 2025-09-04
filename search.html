@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>StudySmart - Exam Selection</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #ea2a33;
+        --secondary-color-light: #f8f8f8;
+        --text-primary-light: #1a1a1a;
+        --text-secondary-light: #6b7280;
+        --secondary-color-dark: #121212;
+        --text-primary-dark: #ffffff;
+        --text-secondary-dark: #a0a0a0;
+        --surface-dark: #1e1e1e;
+        --border-dark: #2c2c2c;
+      }
+      .group:hover .group-hover\:text-primary-color {
+        color: var(--primary-color) !important;
+      }
+      .dark {
+        --secondary-color: var(--secondary-color-dark);
+        --text-primary: var(--text-primary-dark);
+        --text-secondary: var(--text-secondary-dark);
+        --surface: var(--surface-dark);
+        --border-color: var(--border-dark);
+        --header-bg: #1a1a1a;
+      }
+      .light {
+        --secondary-color: var(--secondary-color-light);
+        --text-primary: var(--text-primary-light);
+        --text-secondary: var(--text-secondary-light);
+        --surface: #ffffff;
+        --border-color: #e5e7eb;
+        --header-bg: #ffffff;
+      }
+      #space, #stars, #stars2, #stars3 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      #stars {
+        background-image: 
+          radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+          radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+          radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+          radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+          radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+          radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+        background-repeat: repeat;
+        background-size: 200px 200px;
+        animation: zoom 5s infinite;
+        opacity: 0;
+      }
+      .dark #stars {
+          opacity: 1;
+          transition: opacity 1s ease-in-out;
+      }
+      @keyframes zoom {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+      }
+    </style>
+</head>
+<body class="bg-[var(--secondary-color)] text-[var(--text-primary)]" id="body">
+<div class="relative flex size-full min-h-screen flex-col bg-[var(--surface)] dark:bg-transparent group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+<div class="fixed top-0 left-0 w-full h-full -z-10" id="space">
+<div id="stars"></div>
+</div>
+<div class="layout-container flex h-full grow flex-col z-10">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--border-color)] px-10 py-4 shadow-sm bg-[var(--header-bg)]">
+<div class="flex items-center gap-10">
+<div class="flex items-center gap-3 text-primary-color">
+<div class="size-6">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
+</svg>
+</div>
+<h1 class="text-[var(--text-primary)] text-xl font-bold tracking-tighter">StudySmart</h1>
+</div>
+<nav class="flex items-center gap-8">
+<a class="text-[var(--text-secondary)] hover:text-primary-color text-sm font-medium transition-colors" href="#">Home</a>
+<a class="text-primary-color text-sm font-bold" href="#">Exams</a>
+<a class="text-[var(--text-secondary)] hover:text-primary-color text-sm font-medium transition-colors" href="#">Practice</a>
+<a class="text-[var(--text-secondary)] hover:text-primary-color text-sm font-medium transition-colors" href="#">Community</a>
+</nav>
+</div>
+<div class="flex flex-1 items-center justify-end gap-4">
+<button class="relative inline-flex items-center h-6 rounded-full w-11 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-color dark:focus:ring-offset-gray-800" id="theme-toggle">
+<span class="sr-only">Toggle dark mode</span>
+<span class="absolute inset-y-0 left-0 flex items-center justify-center w-6 h-6 transition-all duration-300 transform scale-0 opacity-0" id="theme-toggle-light-icon">
+<svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.121-3.536a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zM10 18a1 1 0 01-1-1v-1a1 1 0 112 0v1a1 1 0 01-1 1zM4.95 15.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414-1.414zM2.121 11.464a1 1 0 010-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414 0zM4.95 4.95a1 1 0 00-1.414-1.414L2.828 4.243a1 1 0 101.414 1.414L4.95 4.95z"></path></svg>
+</span>
+<span class="absolute inset-y-0 right-0 flex items-center justify-center w-6 h-6 transition-all duration-300 transform scale-100 opacity-100" id="theme-toggle-dark-icon">
+<svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+</span>
+</button>
+<button class="rounded-md p-2 text-[var(--text-secondary)] hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-color focus:outline-none focus:ring-2 focus:ring-primary-color focus:ring-offset-2 dark:focus:ring-offset-gray-800">
+<span class="sr-only">View notifications</span>
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="h-10 w-10 rounded-full bg-cover bg-center bg-no-repeat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkvO6OV28hkeR6izywpIgt3-WOdvAtMv7o9Jon-AMlXbcnJCJWFxVuVTJuHN9JtuKYz9X5yUP72hrXsboZ89KfTB5-0JL1g-_WofLL8wtIg1PF8m_29ShqLZs4V1xiwcWjDsZc84hnfEfCIAGZf1MX0M7q7EHhFZIeaIzlZGgIoBXQm2R5shc6yyEEYbwn0IX6NzCZJC6gRpG4IglxMIMOeKDV9Yc-v6Wk4L-LAvNpAIk0WnMIB9DMq7HDlNkfLnsCUaJW8Sp-l5Q");'></div>
+</div>
+</header>
+<main class="flex flex-1 flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-5xl text-center">
+<h2 class="text-4xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-5xl">Choose Your Path to Success</h2>
+<p class="mt-4 text-xl text-[var(--text-secondary)]">Select your target exam and let's begin your journey.</p>
+</div>
+<div class="mt-12 flex w-full max-w-3xl flex-col items-center gap-6">
+<div class="relative w-full">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+<svg class="h-5 w-5 text-[var(--text-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<input class="form-input w-full rounded-full border-[var(--border-color)] bg-gray-100 dark:bg-gray-800 py-3 pl-12 pr-4 text-base text-[var(--text-primary)] placeholder:text-[var(--text-secondary)] focus:border-primary-color focus:ring-primary-color" placeholder="Search for exam sections (e.g., Verbal Ability, Quantitative Aptitude)" type="search"/>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-4">
+<span class="text-sm font-medium text-[var(--text-secondary)]">Popular filters:</span>
+<button class="rounded-full border border-primary-color bg-primary-color/10 px-4 py-1.5 text-sm font-semibold text-primary-color transition-colors hover:bg-primary-color/20">All Exams</button>
+<button class="rounded-full border border-[var(--border-color)] px-4 py-1.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-primary-color hover:text-primary-color">CAT Sections</button>
+<button class="rounded-full border border-[var(--border-color)] px-4 py-1.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-primary-color hover:text-primary-color">GATE Sections</button>
+</div>
+</div>
+<div class="mt-12 grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
+<a class="group relative flex transform flex-col items-center justify-center overflow-hidden rounded-xl border border-[var(--border-color)] bg-[var(--surface)] p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-color/30" href="#">
+<div class="absolute inset-0 bg-cover bg-center opacity-20 transition-opacity duration-300 group-hover:opacity-30" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCC8erT2xywYxUqBs6wbk4-BUexX9velUZQ1EW9GSEZhQ7_Ndbtqaimrk9EL0HUx339yCD_MhW6UraX82icS77IIUAVhNUDV9ytpdv716xNDeNE7Cgp4aM83KbucYqCmdjAstMjJ8pbyZyYaknSNIkYzHcolQROTT2BRQvbStG0lWZ2Bu7isZyEiGNCWg-YrvdjgzsJNZlNgfBY4QM5M6862ZDwkbx3k1138zqX1klClpJoR8r7xGa404Dz-gnn4FOxgaKv8QW-dho");'></div>
+<div class="relative z-10 text-center">
+<h3 class="text-4xl font-bold text-[var(--text-primary)]">CAT</h3>
+<p class="mt-2 text-lg text-[var(--text-secondary)]">Common Admission Test</p>
+<button class="mt-6 inline-flex items-center rounded-full bg-primary-color px-8 py-3 text-lg font-bold text-white transition-transform duration-300 group-hover:scale-105">
+Start Preparing
+<svg class="ml-2 -mr-1 h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</a>
+<a class="group relative flex transform flex-col items-center justify-center overflow-hidden rounded-xl border border-[var(--border-color)] bg-[var(--surface)] p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-color/30" href="#">
+<div class="absolute inset-0 bg-cover bg-center opacity-20 transition-opacity duration-300 group-hover:opacity-30" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkf7_1ChtNSljZ8gdDs0J58vnCQsHHAk1zEZHRv0GermIbOL6Vrjck_y6M6bFz7ic_B7cT60ZsscuMCU3-10yqanULQl1YymaD1XRAMcNToPwRiM6okwH732BK5BUboSJhRmxv5YoVa0OMWgd8QTP4-QyeiS_gavhn-ulBb5bY48Xi_4It0gI24AMdCrpl3sDVTjQ-60-6o-rpAZ17Wx6hXRdm1w4EFupgv8imy-VTywq_0WEB-ldft2IwaEcN2A7E73OhIuv0ONg");'></div>
+<div class="relative z-10 text-center">
+<h3 class="text-4xl font-bold text-[var(--text-primary)]">GATE</h3>
+<p class="mt-2 text-lg text-[var(--text-secondary)]">Graduate Aptitude Test in Engineering</p>
+<button class="mt-6 inline-flex items-center rounded-full bg-primary-color px-8 py-3 text-lg font-bold text-white transition-transform duration-300 group-hover:scale-105">
+Start Preparing
+<svg class="ml-2 -mr-1 h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</a>
+</div>
+</main>
+</div>
+</div>
+<script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const body = document.getElementById('body');
+    const html = document.documentElement;
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            html.classList.add('dark');
+            html.classList.remove('light');
+            body.classList.add('dark');
+            body.classList.remove('light');
+            themeToggleLightIcon.classList.remove('scale-100', 'opacity-100');
+            themeToggleLightIcon.classList.add('scale-0', 'opacity-0');
+            themeToggleDarkIcon.classList.remove('scale-0', 'opacity-0');
+            themeToggleDarkIcon.classList.add('scale-100', 'opacity-100');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            html.classList.remove('dark');
+            html.classList.add('light');
+            body.classList.remove('dark');
+            body.classList.add('light');
+            themeToggleLightIcon.classList.add('scale-100', 'opacity-100');
+            themeToggleLightIcon.classList.remove('scale-0', 'opacity-0');
+            themeToggleDarkIcon.classList.add('scale-0', 'opacity-0');
+            themeToggleDarkIcon.classList.remove('scale-100', 'opacity-100');
+            localStorage.setItem('theme', 'light');
+        }
+    }
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        applyTheme('dark');
+    } else {
+        applyTheme('light');
+    }
+    themeToggleBtn.addEventListener('click', function() {
+        if (localStorage.getItem('theme') === 'dark') {
+            applyTheme('light');
+        } else {
+            applyTheme('dark');
+        }
+    });
+</script>
+
+</body></html>

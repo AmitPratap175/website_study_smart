@@ -1,0 +1,233 @@
+<html><head>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        :root {
+            --primary-color: #ea2a33;
+        }
+        .dark {
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e1e;
+            --bg-tertiary: #2a2a2a;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --border-color: #3a3a3a;
+        }
+        .light {
+            --bg-primary: #f9fafb;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f3f4f6;
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+            --border-color: #e5e7eb;
+        }
+        @keyframes stars-slow {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100vh); }
+        }
+        @keyframes stars-medium {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100vh); }
+        }
+        @keyframes stars-fast {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100vh); }
+        }
+        .stars-slow {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                radial-gradient(1px 1px at 20% 30%, white, rgba(255,255,255,0)),
+                radial-gradient(1px 1px at 70% 60%, white, rgba(255,255,255,0)),
+                radial-gradient(1px 1px at 40% 90%, white, rgba(255,255,255,0));
+            animation: stars-slow 200s linear infinite;
+        }
+        .stars-medium {
+             position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                radial-gradient(1.5px 1.5px at 10% 50%, white, rgba(255,255,255,0)),
+                radial-gradient(1.5px 1.5px at 80% 20%, white, rgba(255,255,255,0)),
+                radial-gradient(1.5px 1.5px at 50% 80%, white, rgba(255,255,255,0));
+            animation: stars-medium 100s linear infinite;
+        }
+        .stars-fast {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                radial-gradient(2px 2px at 30% 70%, white, rgba(255,255,255,0)),
+                radial-gradient(2px 2px at 90% 40%, white, rgba(255,255,255,0)),
+                radial-gradient(2px 2px at 60% 10%, white, rgba(255,255,255,0));
+            animation: stars-fast 50s linear infinite;
+        }
+    </style>
+<script>
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+        }
+    </script>
+</head>
+<body class="bg-[--bg-primary] text-[--text-primary] transition-colors duration-300">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+<div class="dark:opacity-20 opacity-0 transition-opacity duration-500">
+<div class="stars-slow"></div>
+<div class="stars-medium"></div>
+<div class="stars-fast"></div>
+</div>
+<div class="layout-container flex h-full grow flex-col z-10">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[--border-color] bg-[--bg-secondary] px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-[--text-primary]">
+<div class="size-8 text-[var(--primary-color)]">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">StudySmart</h2>
+</div>
+<nav class="flex items-center gap-6">
+<a class="text-[--text-secondary] hover:text-[--text-primary] text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-[--text-primary] text-sm font-bold leading-normal relative" href="#">
+                        Practice
+                        <span class="absolute -bottom-1 left-0 right-0 h-0.5 bg-[var(--primary-color)] rounded-full"></span>
+</a>
+<a class="text-[--text-secondary] hover:text-[--text-primary] text-sm font-medium leading-normal" href="#">Review</a>
+<a class="text-[--text-secondary] hover:text-[--text-primary] text-sm font-medium leading-normal" href="#">Community</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<label class="flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-md h-full">
+<div class="text-gray-400 dark:text-gray-500 flex border-none bg-[--bg-tertiary] items-center justify-center pl-3 rounded-l-md border-r-0" data-icon="MagnifyingGlass" data-size="24px" data-weight="regular">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-[--text-primary] focus:outline-0 focus:ring-0 border-none bg-[--bg-tertiary] focus:border-none h-full placeholder:text-gray-500 dark:placeholder:text-gray-400 px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Search questions..." value=""/>
+</div>
+</label>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md size-10 bg-[--bg-tertiary] hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+<div data-icon="Bell" data-size="20px" data-weight="regular">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</div>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md size-10 bg-[--bg-tertiary] hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors" onclick="toggleTheme()">
+<span class="dark:hidden">
+<svg class="feather feather-moon" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</span>
+<span class="hidden dark:inline">
+<svg class="feather feather-sun" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
+</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgSeR59pPQjkC5n5d1iMGTpXDIP5BL9j301GTwim9nMhBrdYwT3woRCOaBfSfAEf07t5jG2n2bz9UqhdJAINF15NePV7EX2ZEE8uSPO8Rulx19FhAH_MwFdWa21g0o4UQvaFj59YoP37wDsCDDvUnt1rSn-Ke065k2pV6bKirns9IYcmQYvZybZtshs5rBFRnWSRCHoAejEyx_Ac631rbPlt-2YM3p6zaIjsWD5wDJQEy2sL7RUOnyl0kXdI2u88DRwcLtCmcUp7A");'></div>
+</div>
+</header>
+<main class="px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col w-full max-w-7xl">
+<div class="flex flex-wrap justify-between items-center gap-4 p-4">
+<div class="flex flex-col gap-1">
+<h1 class="text-[--text-primary] text-3xl font-bold leading-tight">Practice Questions</h1>
+<p class="text-[--text-secondary] text-base font-normal leading-normal">Enhance your understanding with targeted practice questions.</p>
+</div>
+</div>
+<div class="flex gap-3 p-4 flex-wrap items-center bg-[--bg-secondary] border border-[--border-color] rounded-lg mb-6">
+<span class="text-[--text-secondary] font-medium text-sm">Filter by:</span>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-md bg-[--bg-tertiary] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors px-4">
+<p class="text-[--text-primary] text-sm font-medium leading-normal">Subject</p>
+<div class="text-[--text-secondary]" data-icon="CaretDown" data-size="16px" data-weight="bold">
+<svg fill="currentColor" height="16px" viewBox="0 0 256 256" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M215.39,92.34a8,8,0,0,0-5.63-2.34H46.24a8,8,0,0,0-5.66,13.66l82.07,82.06a8,8,0,0,0,11.32,0l82.07-82.06a8,8,0,0,0-1.61-11.32Z"></path></svg>
+</div>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-md bg-[--bg-tertiary] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors px-4">
+<p class="text-[--text-primary] text-sm font-medium leading-normal">Difficulty</p>
+<div class="text-[--text-secondary]" data-icon="CaretDown" data-size="16px" data-weight="bold">
+<svg fill="currentColor" height="16px" viewBox="0 0 256 256" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M215.39,92.34a8,8,0,0,0-5.63-2.34H46.24a8,8,0,0,0-5.66,13.66l82.07,82.06a8,8,0,0,0,11.32,0l82.07-82.06a8,8,0,0,0-1.61-11.32Z"></path></svg>
+</div>
+</button>
+<div class="flex-grow"></div>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-md bg-[--bg-tertiary] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors pl-4 pr-3">
+<p class="text-[--text-primary] text-sm font-medium leading-normal">Sort by Date</p>
+<div class="text-[--text-secondary]" data-icon="ArrowUp" data-size="16px" data-weight="bold">
+<svg fill="currentColor" height="16px" viewBox="0 0 256 256" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"></path></svg>
+</div>
+</button>
+</div>
+<div class="overflow-x-auto">
+<div class="bg-[--bg-secondary] border border-[--border-color] rounded-lg shadow-sm">
+<table class="w-full text-left">
+<thead class="bg-[--bg-tertiary] border-b border-[--border-color]">
+<tr>
+<th class="px-6 py-3 text-left text-xs font-medium text-[--text-secondary] uppercase tracking-wider w-2/5">Question</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-[--text-secondary] uppercase tracking-wider w-2/5">Description</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-[--text-secondary] uppercase tracking-wider w-1/5">Difficulty</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[--border-color]">
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[--text-primary]">Calculus Basics</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[--text-secondary]">A set of fundamental calculus problems.</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-normal">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">Easy</span>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[--text-primary]">Linear Algebra</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[--text-secondary]">Problems on vector spaces and linear transformations.</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-normal">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200">Medium</span>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[--text-primary]">Probability Theory</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[--text-secondary]">Questions on basic probability concepts.</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-normal">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">Easy</span>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[--text-primary]">Differential Equations</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[--text-secondary]">Solving various types of differential equations.</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-normal">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200">Hard</span>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[--text-primary]">Statistics Fundamentals</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[--text-secondary]">Basic statistical analysis and interpretation.</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-normal">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200">Medium</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script>
+    // Set initial theme based on user preference or system setting
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+    function toggleTheme() {
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        }
+    }
+</script>
+
+</body></html>
