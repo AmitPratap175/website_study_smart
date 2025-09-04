@@ -207,18 +207,7 @@ const Community: React.FC = () => {
         </main>
       </div>
 
-      <style jsx>{`
-        .perspective {
-          perspective: 1000px;
-        }
-        .card {
-          transform-style: preserve-3d;
-          transition: transform 0.5s;
-        }
-        .card:hover {
-          transform: rotateY(5deg) rotateX(5deg) scale(1.02);
-        }
-      `}</style>
+
     </div>
   );
 };
