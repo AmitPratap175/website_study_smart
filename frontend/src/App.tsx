@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from './contexts/ThemeContext';
-import { DataProvider } from './contexts/DataContext';
-import Header from './components/Header';
-import Landing from './pages/Landing';
-import Practice from './pages/Practice';
-import Question from './pages/Question';
-import Analytics from './pages/Analytics';
-import Settings from './pages/Settings';
-import Search from './pages/Search';
-import Community from './pages/Community';
+import { ThemeProvider } from './contexts/ThemeContext.tsx';
+import { DataProvider } from './contexts/DataContext.tsx';
+import Header from './components/Header.tsx';
+import Landing from './pages/Landing.tsx';
+import Practice from './pages/Practice.tsx';
+import Question from './pages/Question.tsx';
+import Analytics from './pages/Analytics.tsx';
+import Settings from './pages/Settings.tsx';
+import Search from './pages/Search.tsx';
+import Community from './pages/Community.tsx';
 import './App.css';
 
 function App() {
